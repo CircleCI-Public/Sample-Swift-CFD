@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  build-and-test:
+    macos:
+      xcode: 14.0.1
+    steps:
+      - checkout
+      - run: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
+
+    
+workflows:
+  build-and-test-wf:
+    jobs:
+      - build-and-test

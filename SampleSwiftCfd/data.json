@@ -1,0 +1,31 @@
+
+[
+    {
+        "name": "Hamburger",
+        "id": 1,
+        "description": "A classic american hamburger with cheese. Cooked to a perfect medium-rare",
+        "imageName": "hamburger",
+        "cost": 12,
+        "quantity": 1,
+        "cart": false,
+    },
+    {
+        "name": "Pizza",
+        "id": 2,
+        "description": "A slice straight from Italy",
+        "imageName": "pizza",
+        "cost": 8,
+        "quantity": 1,
+        "cart": false,
+    },
+    {
+        "name": "Soup",
+        "id": 3,
+        "description": "Just like mom used to make",
+        "imageName": "soup",
+        "cost": 4,
+        "quantity": 1,
+        "cart": false,
+    },
+]
+

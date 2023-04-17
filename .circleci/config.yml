@@ -5,6 +5,7 @@ jobs:
       xcode: 14.0.1
     steps:
       - checkout
+      - run: brew install swiftlint
       - run: swiftlint lint --reporter junit | tee result.xml
       - run: swift test
       - run: swift build

@@ -6,6 +6,8 @@ jobs:
     steps:
       - checkout
       - run: swiftlint lint --reporter junit | tee result.xml
+      - run: swift test
+      - run: swift build
       - store_artifacts:
           path: result.xml
       - store_test_results:

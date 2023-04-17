@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct removeFromCartButton: View {
+struct RemoveFromCartButton: View {
     var food: Food
     @Binding var isInCart: Bool
     var body: some View {
-        Button{
+        Button {
            isInCart = false
         }label: {
             Label("", systemImage: "trash")
@@ -19,8 +19,8 @@ struct removeFromCartButton: View {
     }
 }
 
-struct removeFromCartButton_Previews: PreviewProvider {
+struct RemoveFromCartButton_Previews: PreviewProvider {
     static var previews: some View {
-        removeFromCartButton(food: ModelData().foods[1], isInCart: .constant(true))
+        RemoveFromCartButton(food: ModelData().foods[1], isInCart: .constant(true))
     }
 }

@@ -15,7 +15,6 @@ struct Food: Hashable, Codable, Identifiable {
     var description: String
     var quantity: Int
     var cart: Bool
-    
     private var imageName: String
     var image: Image {
         Image(imageName)

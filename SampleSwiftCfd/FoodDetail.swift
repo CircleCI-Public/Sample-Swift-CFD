@@ -10,18 +10,16 @@ import SwiftUI
 struct FoodDetail: View {
     @EnvironmentObject var modelData: ModelData
     var food: Food
-    
     var foodIndex: Int {
         modelData.foods.firstIndex(where: {$0.id == food.id})!
     }
-    
     var body: some View {
         VStack {
             Background()
                 .ignoresSafeArea(edges: .top)
                 .frame(height: 300)
             ImageView(image: food.image)
-                .offset(y:-130)
+                .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .center) {
                 Text(food.name)
@@ -31,7 +29,6 @@ struct FoodDetail: View {
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                     Spacer()
-                    
                 }
                 Divider()
                 Text("Cost:")
@@ -42,7 +39,6 @@ struct FoodDetail: View {
                     .multilineTextAlignment(.center)
             }
             .padding()
-            
             Spacer()
             HStack {
                 Text("")
@@ -55,7 +51,6 @@ struct FoodDetail: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 
 struct FoodDetail_Previews: PreviewProvider {
     static let modelData = ModelData()

@@ -10,22 +10,18 @@ import SwiftUI
 struct CartRow: View {
     @EnvironmentObject var modelData: ModelData
     var food: Food
-    
     var foodIndex: Int {
         modelData.foods.firstIndex(where: {$0.id == food.id})!
     }
-    
     var body: some View {
-        HStack{
+        HStack {
             food.image
                 .resizable()
                 .frame(width: 50, height: 50)
             Text(food.name)
-            
             Spacer()
             Text("$\(food.cost)")
-            removeFromCartButton(food: food, isInCart: $modelData.foods[foodIndex].cart)
-            
+            RemoveFromCartButton(food: food, isInCart: $modelData.foods[foodIndex].cart)
         }.padding(.horizontal, 10.0)
     }
 }

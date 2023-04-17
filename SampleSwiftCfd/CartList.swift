@@ -10,7 +10,6 @@ import SwiftUI
 struct CartList: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showQuantityGreaterZero = true
-    
     var filteredFood: [Food] {
         modelData.foods.filter { food in
             (!showQuantityGreaterZero || food.cart)
@@ -18,13 +17,13 @@ struct CartList: View {
     }
     var total: Int {
         var currentTotal = 0
-        for food in filteredFood{
-            currentTotal = currentTotal + food.cost
+        for food in filteredFood {
+            currentTotal += food.cost
         }
         return currentTotal
     }
     var body: some View {
-        VStack{
+        VStack {
             NavigationView {
                 List(filteredFood) { food in
                     CartRow(food: food)
@@ -32,11 +31,12 @@ struct CartList: View {
                 .navigationTitle("Cart")
             }
             Text("Total: $\(total)")
+                .font(.title)
+                .fontWeight(.bold)
                 .padding(.bottom, 100.0)
         }
     }
 }
-
 
 struct CartList_Previews: PreviewProvider {
     static var previews: some View {

@@ -11,7 +11,7 @@ struct AddToCartButton: View {
     var food: Food
     @Binding var isInCart: Bool
     var body: some View {
-        Button{
+        Button {
            isInCart = true
         }label: {
             Label(food.cart ? "Added to Cart" : "Add To Cart", systemImage: "")

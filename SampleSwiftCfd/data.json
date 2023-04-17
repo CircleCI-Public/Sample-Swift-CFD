@@ -7,7 +7,7 @@
         "imageName": "hamburger",
         "cost": 12,
         "quantity": 1,
-        "cart": false,
+        "cart": true,
     },
     {
         "name": "Pizza",

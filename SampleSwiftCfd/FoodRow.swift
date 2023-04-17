@@ -9,14 +9,12 @@ import SwiftUI
 
 struct FoodRow: View {
     var food: Food
-    
     var body: some View {
-        HStack{
+        HStack {
             food.image
                 .resizable()
                 .frame(width: 50, height: 50)
             Text(food.name)
-            
             Spacer()
         }
     }

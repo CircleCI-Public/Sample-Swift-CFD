@@ -6,13 +6,18 @@ jobs:
     steps:
       - checkout
       - run: brew install swiftlint
-      - run: swiftlint lint --reporter junit | tee result.xml
-      - run: swift test
+      - run: swiftlint lint --reporter junit | tee lintResult.xml
+      - run: swift test | tee testResults.xml
       - run: swift build
       - store_artifacts:
-          path: result.xml
+          path: 
+            - lintResult.xml
+            - testResults.xml
       - store_test_results:
-          path: result.xml
+          path: 
+            - lintResult.xml
+            - testResults.xml
+
 
     
 workflows:

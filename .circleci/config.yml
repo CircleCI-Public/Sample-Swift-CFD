@@ -10,15 +10,13 @@ jobs:
       - run: swift test | tee testResults.xml
       - run: swift build
       - store_artifacts:
-          path: 
-            - lintResult.xml
-            - testResults.xml
+          path: lintResult.xml
       - store_test_results:
-          path: 
-            - lintResult.xml
-            - testResults.xml
-
-
+          path: lintResult.xml
+      - store_artifacts:
+          path: testResults.xml
+      - store_test_results:
+          path: testResults.xml
     
 workflows:
   build-and-test-wf:

@@ -1,4 +1,8 @@
 version: 2.1
+
+orbs:
+  macos: circleci/macos@2
+
 jobs:
   build-and-test:
     macos:
@@ -17,8 +21,21 @@ jobs:
           path: testResults.xml
       - store_test_results:
           path: testResults.xml
+  ios-deploy:
+    macos:
+      xcode: 14.2.0
+      resource_class: macos.x86.medium.gen2
+    steps:
+        - checkout
+        - macos/switch-ruby:
+              version: "3.0"
+        - run: bundle install
+        - run: bundle exec fastlane dev
     
 workflows:
-  build-and-test-wf:
+  build-and-deploy-wf:
     jobs:
       - build-and-test
+      - ios-deploy:
+          requires:
+            - build-and-test

@@ -1,0 +1,6 @@
+username("community-partner@circleci.com")
+app_identifier("com.sampleswiftcfd")
+
+storage_mode("git")
+git_url("git@github.com:CircleCI-Public/fastlane-match.git")
+git_branch("main")
